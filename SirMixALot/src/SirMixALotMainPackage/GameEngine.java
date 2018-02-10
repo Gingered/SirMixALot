@@ -3,9 +3,11 @@ package SirMixALotMainPackage;
 public class GameEngine implements Runnable{
 	private boolean running = false; // Kører loopet
 	private MainAc game;
+	private Frame frame;
 	
-	public GameEngine(MainAc game){ // Constructer starter tingen
+	public GameEngine(MainAc game, Frame frame){ // Constructer starter tingen
 		this.game = game;
+		this.frame = frame;
 		start();
 	}
 	
@@ -47,7 +49,7 @@ public class GameEngine implements Runnable{
 				fps++;
 			}
 			
-			if(timer >= 1.0){
+			if(timer >= 1.0){ // Viser hvor mange FPS der er
 				System.out.println("FPS " + fps);
 				timer--;
 				fps = 0;
